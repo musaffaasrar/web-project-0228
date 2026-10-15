@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff8f9;
+    color: #5b2a4a;
+}
+
+nav {
+    background-color: #f8bbd0;
+    padding: 18px 0;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #880e4f;
+    margin: 0 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.media-banner {
+    height: 220px;
+    background-image: linear-gradient(rgba(136, 14, 79, 0.55), rgba(136, 14, 79, 0.55)), url("assets/blush-img.avif");
+    background-size: cover;
+    background-position: center;
+}
+
+.media-banner h1 {
+    color: white;
+    text-align: center;
+    padding-top: 85px;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.photo-box {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #f8bbd0;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.photo-box img {
+    float: left;
+    width: 260px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 12px;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e91e63;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.tips-box,
+.products-box {
+    display: inline-block;
+    vertical-align: top;
+    width: 47%;
+    min-height: 180px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #f8bbd0;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.products-box {
+    margin-left: 3%;
+}
+
+li {
+    margin-left: 20px;
+    margin-bottom: 8px;
+}
+
+.price-box {
+    clear: both;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #f8bbd0;
+    text-align: left;
+}
+
+th {
+    background-color: #f8bbd0;
+    color: #880e4f;
+}
+
+footer {
+    background-color: #212121;
+    color: #ffcdd2;
+    text-align: center;
+    padding: 20px;
+}

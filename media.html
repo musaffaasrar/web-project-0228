@@ -3,40 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>media-blush and bloom</title>
-    <link rel="stylesheet" href="style.css">
+    <title>blush and bloom</title>
+    <link rel="stylesheet" href="media.css">
 </head>
 <body>
     <nav>
     <a href="home.html">Home</a>
-    <a href="media.html">Media</a>
-    <a href="register.html">Register</a>
-    <a href="services.html">Services</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact</a>
+        <a href="media.html">Media</a>
+        <a href="register.html">Register</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
 </nav>
+
+<header class="media-banner">
+    <h1>Media and Info</h1>
+</header>
+
 <main>
-    <h1>Media Gallery</h1>
     <section class="photo-box">
+        <span class="badge">New</span>
+        <img src="assets/blush-img.avif" alt="Pink flat lay of makeup brushes and creams">
         <h2>Our Look</h2>
-        <img src="assets/makeup.avif" alt="Pink flat lay of makeup brushes and creams">
+        <p>Blush & Bloom - Where Beauty Blossoms Into Confidence.
+           We don't just do makeup, we create your most beautiful version.</p>
     </section>
 
-    <section class="video-box">
-        <h2>Makeup Tutorial</h2>
-        <video controls width="400">
-            <source src="media/tutorial.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <section class="tips-box">
+        <h2>Makeup Tips</h2>
+        <ol>
+            <li>Cleanse and moisturise your face.</li>
+            <li>Apply primer and foundation.</li>
+            <li>Finish with blush and lipstick.</li>
+        </ol>
     </section>
 
-    <section class="audio-box">
-        <h2>Meet Blush and Bloom</h2>
-        <audio controls>
-            <source src="media/intro.mp3" type="audio/mpeg">
-            Your browser does not support the audio tag.
-        </audio>
+    <section class="products-box">
+        <h2>Must-Have Products</h2>
+        <ul>
+            <li>Foundation</li>
+            <li>Blush</li>
+            <li>Lipstick</li>
+            <li>Eyeshadow Palette</li>
+            <li>Eyeliner</li>
+            <li>Mascara</li>
+            <li>Primer</li>
+            <li>Fixer Spray</li>
+        </ul>
+    </section>
+
+    <section class="price-box">
+        <h2>Price List</h2>
+        <div class="table-wrap">
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Bridal Makeup</td>
+                    <td>Rs. 25,000</td>
+                </tr>
+                <tr>
+                    <td>Party Makeup</td>
+                    <td>Rs. 8,000</td>
+                </tr>
+                <tr>
+                    <td>Skin Care</td>
+                    <td>Rs. 5,000</td>
+                </tr>
+            </table>
+        </div>
     </section>
 </main>
+
+<footer>
+    <p>&copy; 2026 Blush and Bloom. All rights reserved.</p>
+</footer>
 </body>
 </html>

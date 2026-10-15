@@ -33,29 +33,32 @@ nav a:hover {
 }
 
 #main-banner {
+    min-height: 480px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 60px 8%;
-    background-color: white;
     margin: 25px;
     border-radius: 20px;
     border: 1px solid #fce4ec;
+    background-image: linear-gradient(rgba(136, 14, 79, 0.65), rgba(233, 30, 99, 0.35)), url("assets/blush-img.avif");
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-text {
     flex: 1;
+    max-width: 560px;
     padding-right: 40px;
 }
 
 .hero-text h1 {
     font-size: 48px;
-    color: #c2185b;
+    color: white;
     margin-bottom: 15px;
 }
 
 .hero-text p {
-    color: #666;
+    color: #fff0f3;
     line-height: 1.7;
     margin-bottom: 25px;
 }
@@ -70,23 +73,7 @@ nav a:hover {
     display: inline-block;
 }
 
-.hero-img {
-    flex: 1;
-    text-align: right;
-}
-
-.hero-img img {
-    width: 100%;
-    max-width: 450px;
-    border-radius: 20px;
-    border: 6px solid #fff0f3;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    animation:float 3s ease-in-out infinite;
-}
-
-
-
-   .why-us  {
+.why-us  {
     padding: 50px 8%;
     background-color: #fff8f9;
     text-align: center;
@@ -95,7 +82,6 @@ nav a:hover {
     justify-content: center;
     gap: 25px;
 }
-
 
 .feature {
     background-color: white;
@@ -123,9 +109,4 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 30px;
-}
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
 }
