@@ -3,131 +3,209 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #fff8f9;
     color: #5b2a4a;
 }
-
 nav {
-    background-color: #f8bbd0;
-    padding: 18px 0;
-    text-align: center;
+    background-color: white;
+    padding: 20px 50px;
+    text-align: right;
+    border-bottom: 2px solid #f8bbd0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
-
 nav a {
     text-decoration: none;
-    color: #880e4f;
-    margin: 0 15px;
-    font-size: 14px;
+    color: #555;
+    margin-left: 25px;
+    font-size: 13px;
     font-weight: 600;
+    text-transform: uppercase;
 }
+nav a:hover { color: #e91e63; }
 
-nav a:hover {
-    text-decoration: underline;
-}
 
 .media-banner {
-    height: 220px;
-    background-image: linear-gradient(rgba(136, 14, 79, 0.55), rgba(136, 14, 79, 0.55)), url("assets/blush-img.avif");
+    height: 300px;
+    background-image: linear-gradient(rgba(136, 14, 79, 0.6), rgba(233, 30, 99, 0.4)), url("assets/blush-img.avif");
     background-size: cover;
     background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    border-radius: 20px;
 }
-
 .media-banner h1 {
     color: white;
-    text-align: center;
-    padding-top: 85px;
+    font-size: 48px;
+    letter-spacing: 1px;
 }
 
 main {
-    width: 90%;
-    max-width: 900px;
-    margin: 30px auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
 }
+
 
 .photo-box {
-    position: relative;
-    overflow: hidden;
-    background-color: white;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 25px;
     border: 1px solid #f8bbd0;
-    border-radius: 15px;
-    margin-bottom: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
 }
-
 .photo-box img {
-    float: left;
-    width: 260px;
-    height: 200px;
+    width: 380px;
+    height: 260px;
     object-fit: cover;
-    margin-right: 20px;
-    border-radius: 12px;
+    border-radius: 15px;
+    flex-shrink: 0;
 }
-
+.photo-box h2 { 
+    color: #ad1457; font-size: 28px; margin-bottom: 10px; 
+}
+.photo-box p { 
+    color: #666; line-height: 1.7;
+ }
 .badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #e91e63;
+    top: -10px;
+    left: 30px;
+    background: #e91e63;
     color: white;
-    padding: 4px 12px;
+    padding: 6px 18px;
     border-radius: 20px;
     font-size: 12px;
+    font-weight: bold;
 }
 
-.tips-box,
-.products-box {
-    display: inline-block;
-    vertical-align: top;
-    width: 47%;
-    min-height: 180px;
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #f8bbd0;
+.bridal-gallery {
+    background: #fff0f3;
+    padding: 50px 8%;
+    text-align: center;
+    margin: 20px 0;
+}
+.bridal-gallery h2 { 
+    color: #ad1457; font-size: 32px;
+ }
+.gallery-sub {
+     color: #999; margin: 8px 0 30px; 
+    }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.g-card {
+    background: white;
     border-radius: 15px;
-    margin-bottom: 25px;
-}
-
-.products-box {
-    margin-left: 3%;
-}
-
-li {
-    margin-left: 20px;
-    margin-bottom: 8px;
-}
-
-.price-box {
-    clear: both;
-}
-
-.table-wrap {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-}
-
-th,
-td {
-    padding: 12px;
+    overflow: hidden;
     border: 1px solid #f8bbd0;
-    text-align: left;
+    transition: 0.3s;
 }
+.g-card:hover { 
+    transform: translateY(-8px); box-shadow: 0 12px 25px rgba(233,30,99,0.15); 
+}
+.g-card img {
+     width: 100%; height: 320px; object-fit: cover;
+     }
+.g-card span { 
+    display: block; padding: 12px; font-weight: 600; color: #880e4f;
+ }
 
-th {
-    background-color: #f8bbd0;
-    color: #880e4f;
+
+.all-products {
+    background: white;
+    padding: 50px 8%;
+    text-align: center;
 }
+.all-products h2 { 
+    color: #ad1457; font-size: 32px; 
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto 0;
+}
+.p-card {
+    background: #fff8f9;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #fce4ec;
+    transition: 0.3s;
+}
+.p-card:hover { 
+    transform: scale(1.05); background: white; border-color: #f8bbd0; box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+ }
+.p-card img {
+     width: 100%; height: 150px; object-fit: contain; background: white; border-radius: 10px;
+     }
+.p-card h4 {
+     margin: 12px 0 4px; font-size: 14px;
+     }
+.p-card p {
+     color: #e91e63; font-weight: bold; 
+    }
+
+
+.bottom-row {
+    display: flex;
+    gap: 25px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+.tips-box, .price-box {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #f8bbd0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+}
+.tips-box h2, .price-box h2 { 
+    color: #ad1457; margin-bottom: 15px; font-size: 22px; 
+}
+li { 
+    margin-left: 20px; margin-bottom: 10px; color: #555;
+ }
+table { 
+    width: 100%; border-collapse: collapse;
+ }
+th, td {
+     padding: 12px; border: 1px solid #f8bbd0; text-align: left; 
+    }
+th {
+     background: #f8bbd0; color: #880e4f;
+ }
 
 footer {
-    background-color: #212121;
+    background: #212121;
     color: #ffcdd2;
     text-align: center;
     padding: 20px;
+    margin-top: 40px;
+}
+
+@media(max-width: 768px){
+    .photo-box { flex-direction: column; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .bottom-row { flex-direction: column; }
+    nav { text-align: center; padding: 15px; }
 }

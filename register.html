@@ -3,65 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blush and bloom</title>
+    <title>Blush and Bloom - Book & Shop</title>
     <link rel="stylesheet" href="register.css">
 </head>
 <body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="media.html">Media</a>
+        <a href="register.html">Register / Order</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <header class="reg-banner">
+        <h1>Book Your Appointment ♡</h1>
+        <p>Register, book makeup service & order products - all in one place</p>
+    </header>
+
     <main class="form-wrap">
-    <h1>Book Your Appointment</h1>
+        <!-- LEFT SIDE OFFER CARD -->
+        <div class="left-offer">
+            <h2>Welcome to Blush & Bloom</h2>
+            <p class="left-sub">Book your look & shop your favourites</p>
+            <ul>
+                <li>💄 10% OFF on first product order</li>
+                <li>💍 Bridal, Party & Skin Care</li>
+                <li>🎁 Free gift on Rs. 3000+ shopping</li>
+                <li>🚚 Delivery all over Pakistan</li>
+            </ul>
+            <div class="mini-products">
+                <span>Matte Lipstick</span>
+                <span>Foundation</span>
+                <span>Rose Blush</span>
+                <span>Eye Palette</span>
+            </div>
+            <img src="assets/blush-img.avif" alt="makeup">
+        </div>
 
-    <form action="#" method="post">
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" placeholder="Your name" required minlength="3" maxlength="40">
+        <form action="#" method="post" class="form-right">
+            <h3>Your Details</h3>
+            <div class="grid-2">
+                <div>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Your name" required minlength="3">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+            </div>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <div class="grid-2">
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required minlength="6" placeholder="Create password">
+                </div>
+                <div>
+                    <label for="guests">Number of People</label>
+                    <input type="number" id="guests" name="guests" min="1" max="10" value="1">
+                </div>
+            </div>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required minlength="6" maxlength="20">
+            <h3>Appointment</h3>
+            <div class="grid-2">
+                <div>
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div>
+                    <label for="time">Preferred Time</label>
+                    <input type="time" id="time" name="time" min="10:00" max="20:00">
+                </div>
+            </div>
 
-        <label for="date">Preferred Date</label>
-        <input type="date" id="date" name="date" required>
+            <div class="grid-2">
+                <div>
+                    <label for="budget">Budget</label>
+                    <input type="range" id="budget" name="budget" min="5000" max="50000" step="1000">
+                </div>
+                <div>
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" value="Pakistan" readonly>
+                </div>
+            </div>
 
-        <label for="time">Preferred Time</label>
-        <input type="time" id="time" name="time" min="10:00" max="20:00">
+            <label for="service">Service</label>
+            <select id="service" name="service">
+                <option value="bridal">Bridal Makeup - Rs. 25,000</option>
+                <option value="party" selected>Party Makeup - Rs. 8,000</option>
+                <option value="skin">Skin Care - Rs. 5,000</option>
+            </select>
 
-        <label for="guests">Number of People</label>
-        <input type="number" id="guests" name="guests" min="1" max="10" value="1">
+            <h3>Want to Buy Product? (Optional)</h3>
+            <div class="grid-2">
+                <div>
+                    <label>Select Product</label>
+                    <select name="product">
+                        <option value="">-- No Product, Only Service --</option>
+                        <option>Matte Lipstick - Rs. 1500</option>
+                        <option>Liquid Foundation - Rs. 2200</option>
+                        <option>Rose Blush - Rs. 1200</option>
+                        <option>Waterproof Eyeliner - Rs. 900</option>
+                        <option>Eye Palette - Rs. 2800</option>
+                        <option>Luxury Palette - Rs. 3500</option>
+                        <option>Face Primer - Rs. 1600</option>
+                        <option>Setting Spray - Rs. 1800</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Quantity</label>
+                    <input type="number" min="1" value="1" name="qty">
+                </div>
+            </div>
 
-        <label for="budget">Budget</label>
-        <input type="range" id="budget" name="budget" min="5000" max="50000" step="1000">
+            <label for="photo">Reference Photo</label>
+            <input type="file" id="photo" name="photo">
 
-        <label for="country">Country</label>
-        <input type="text" id="country" name="country" value="Pakistan" readonly>
+            <fieldset>
+                <legend>Where should we do your makeup?</legend>
+                <label><input type="radio" name="place" value="studio" checked> At the studio</label>
+                <label><input type="radio" name="place" value="home"> At your home</label>
+            </fieldset>
 
-        <label for="service">Service</label>
-        <select id="service" name="service">
-            <option value="bridal">Bridal Makeup</option>
-            <option value="party" selected>Party Makeup</option>
-            <option value="skin">Skin Care</option>
-        </select>
+            <label for="notes">Delivery Address / Notes</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="House no, Street, City + any notes" maxlength="200"></textarea>
 
-        <label for="photo">Reference Photo</label>
-        <input type="file" id="photo" name="photo">
+            <label class="terms"><input type="checkbox" name="terms" required> I agree to the terms & want to place order</label>
 
-        <fieldset>
-            <legend>Where should we do your makeup?</legend>
-            <label><input type="radio" name="place" value="studio" checked> At the studio</label>
-            <label><input type="radio" name="place" value="home"> At your home</label>
-        </fieldset>
+            <button type="submit">Register & Book Now</button>
+        </form>
+    </main>
 
-        <label for="notes">Notes</label>
-        <textarea id="notes" name="notes" rows="4" maxlength="200"></textarea>
-
-        <label class="terms"><input type="checkbox" name="terms" required> I agree to the terms</label>
-
-        <button type="submit">Book Now</button>
-    </form>
-</main>
-
-<footer>
-    <p>&copy; 2026 Blush and Bloom. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2026 Blush and Bloom. All rights reserved.</p>
+    </footer>
 </body>
 </html>
