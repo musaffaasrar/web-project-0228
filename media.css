@@ -9,23 +9,29 @@ body {
     color: #5b2a4a;
 }
 nav {
-    background-color: white;
-    padding: 20px 50px;
-    text-align: right;
-    border-bottom: 2px solid #f8bbd0;
+    background: linear-gradient(90deg, #e91e63, #ad1457);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
     position: sticky;
     top: 0;
     z-index: 100;
 }
+
 nav a {
     text-decoration: none;
-    color: #555;
-    margin-left: 25px;
+    color: white;
     font-size: 13px;
     font-weight: 600;
-    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
 }
-nav a:hover { color: #e91e63; }
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
 
 
 .media-banner {
@@ -194,7 +200,14 @@ th, td {
 th {
      background: #f8bbd0; color: #880e4f;
  }
-
+.p-card a{
+     text-decoration:none;
+      color:inherit; 
+      display:block;
+     }
+.p-card a:hover{ 
+    transform:scale(1.02); 
+}
 footer {
     background: #212121;
     color: #ffcdd2;
