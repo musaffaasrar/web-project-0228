@@ -3,15 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #fff0f3, #fce4ec, #f8bbd0);
     min-height: 100vh;
     color: #5b2a4a;
 }
-
-
 nav {
     background: linear-gradient(90deg, #e91e63, #ad1457);
     padding: 16px 20px;
@@ -22,7 +19,6 @@ nav {
     top: 0;
     z-index: 100;
 }
-
 nav a {
     text-decoration: none;
     color: white;
@@ -30,14 +26,10 @@ nav a {
     font-weight: 600;
     padding: 8px 18px;
     border-radius: 20px;
-    transition: background-color 0.3s;
 }
-
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.25);
+nav a:hover, nav a.active {
+    background-color: rgba(255,255,255,0.25);
 }
-
-
 .reg-banner {
     background: linear-gradient(rgba(136,14,79,0.65), rgba(233,30,99,0.45)), url("assets/blush-img.avif");
     background-size: cover;
@@ -49,36 +41,19 @@ nav a:hover {
     color: white;
     box-shadow: 0 10px 30px rgba(233,30,99,0.2);
 }
-.reg-banner h1 {
-     font-size: 42px;
-     }
-.reg-banner h1::after { 
-    content: " ♡";
-     color: #ff80ab;
- }
-.reg-banner p { 
-    color: #ffe6ea;
-     margin-top: 8px; 
-}
-
+.reg-banner h1 { font-size: 42px; }
+.reg-banner p { color: #ffe6ea; margin-top: 8px; }
 .form-wrap {
     width: 90%;
     max-width: 1200px;
     margin: 30px auto;
     display: flex;
     gap: 30px;
-    background: transparent;
-    padding: 0;
-    box-shadow: none;
-    border: none;
     align-items: flex-start;
 }
-
-
 .left-offer {
     flex: 0.9;
     background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 25px;
     box-shadow: 0 15px 40px rgba(233,30,99,0.15);
@@ -86,27 +61,11 @@ nav a:hover {
     position: sticky;
     top: 90px;
 }
-.left-offer h2 {
-     color: #880e4f; 
-    font-size: 24px;
- }
-.left-sub { 
-    color: #999; 
-    font-size: 14px; 
-    margin: 8px 0 20px;
- }
-.left-offer ul {
-     list-style: none; 
-}
-.left-offer li {
-     margin-bottom: 12px; 
-     font-size: 14px; 
-     color: #555;
-     }
-.mini-products { display: flex;
-     flex-wrap: wrap; gap: 8px; 
-     margin: 20px 0; 
-    }
+.left-offer h2 { color: #880e4f; font-size: 24px; }
+.left-sub { color: #999; font-size: 14px; margin: 8px 0 20px; }
+.left-offer ul { list-style: none; }
+.left-offer li { margin-bottom: 12px; font-size: 14px; color: #555; }
+.mini-products { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
 .mini-products span {
     background: #fff0f3;
     border: 1px solid #f8bbd0;
@@ -123,18 +82,14 @@ nav a:hover {
     border-radius: 15px;
     margin-top: 10px;
 }
-
-
 .form-right {
     flex: 1.4;
     background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(10px);
     padding: 35px 40px;
     border-radius: 25px;
     box-shadow: 0 15px 40px rgba(233,30,99,0.15);
     border: 1px solid white;
 }
-
 .form-right h3 {
     color: #880e4f;
     font-size: 18px;
@@ -143,13 +98,11 @@ nav a:hover {
     border-bottom: 1px dashed #f8bbd0;
 }
 .form-right h3:first-child { margin-top: 0; }
-
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0px 20px;
 }
-
 label {
     display: block;
     margin-top: 16px;
@@ -158,7 +111,6 @@ label {
     font-size: 13px;
     color: #ad1457;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -173,7 +125,6 @@ textarea {
     border-radius: 12px;
     background-color: #fff8fa;
     font-size: 14px;
-    transition: 0.3s;
 }
 input:focus, select:focus, textarea:focus {
     outline: none;
@@ -181,27 +132,17 @@ input:focus, select:focus, textarea:focus {
     background-color: white;
     box-shadow: 0 0 0 4px rgba(233,30,99,0.1);
 }
-input[readonly] {
-     background-color: #fce4ec;
-      color: #880e4f;
-       font-weight: 600; 
-    }
-input[type="range"] {
-     accent-color: #e91e63;
-      padding: 0; 
-      margin-top: 12px; }
-
+input[readonly] { background-color: #fce4ec; color: #880e4f; font-weight: 600; }
+input[type="range"] { accent-color: #e91e63; margin-top: 12px; }
 fieldset {
     margin-top: 20px;
     padding: 15px;
     border: 1.5px solid #f8bbd0;
     border-radius: 12px;
     background: #fff8f9;
-    grid-column: 1 / -1;
 }
 fieldset legend { padding: 0 10px; font-weight: 600; color: #880e4f; font-size: 13px; }
 fieldset label { display: inline-block; margin-right: 20px; margin-top: 5px; font-weight: 500; color: #555; }
-
 .terms {
     display: flex;
     align-items: center;
@@ -212,7 +153,6 @@ fieldset label { display: inline-block; margin-right: 20px; margin-top: 5px; fon
     border-radius: 10px;
     font-size: 13px;
 }
-
 button {
     width: 100%;
     margin-top: 25px;
@@ -224,14 +164,9 @@ button {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s;
     box-shadow: 0 8px 20px rgba(233,30,99,0.3);
 }
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(233,30,99,0.4);
-}
-
+button:hover { transform: translateY(-2px); }
 footer {
     background-color: #212121;
     color: #ffcdd2;
@@ -240,9 +175,32 @@ footer {
     margin-top: 40px;
 }
 
+.err {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+}
+input.invalid {
+    border: 1.5px solid red !important;
+    background-color: #fff0f0;
+}
+#successMsg {
+    color: green;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+#budgetVal {
+    font-size: 13px;
+    color: #880e4f;
+    font-weight: 600;
+    margin-top: 5px;
+}
 @media(max-width: 900px) {
     .form-wrap { flex-direction: column; }
     .left-offer { position: static; }
     .grid-2 { grid-template-columns: 1fr; }
-    nav { text-align: center; padding: 15px; }
+    nav { flex-wrap: wrap; }
 }
