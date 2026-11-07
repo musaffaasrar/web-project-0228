@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Arial, sans-serif;
+}
+body{
+    background:#fff8fb;
+    color:#333;
+}
+
+
+nav {
+    background: linear-gradient(90deg, #e91e63, #ad1457);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+nav a:hover {
+    background-color: rgba(255,255,255,0.25);
+}
+
+
+.contact-banner{
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('assets/blush-img.avif');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+}
+.contact-banner h1{
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+.contact-banner p{
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.contact-main{
+    max-width: 1000px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 15px;
+}
+.info-side, .form-side{
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.info-side h2, .form-side h2{
+    color: #ad1457;
+    margin-bottom: 10px;
+}
+.info-side > p{
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 18px;
+}
+.info-card{
+    display: flex;
+    gap: 12px;
+    background: #fff0f5;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+.info-card span{
+    font-size: 20px;
+}
+.info-card h4{
+    font-size: 14px;
+    color: #ad1457;
+}
+.info-card p{
+    font-size: 13px;
+    margin-top: 2px;
+}
+.social{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+.social a{
+    text-decoration: none;
+    background: #e91e63;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+}
+
+
+.form-side label{
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 12px 0 5px;
+    color: #555;
+}
+.form-side input, .form-side select, .form-side textarea{
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ffd0de;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+.form-side input:focus, .form-side textarea:focus{
+    border-color: #e91e63;
+}
+.form-side button{
+    width: 100%;
+    margin-top: 18px;
+    background: linear-gradient(90deg, #e91e63, #ad1457);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background: #fff0f5;
+    color: #ad1457;
+    font-size: 13px;
+}
+
+@media(max-width:700px){
+    .contact-main{ grid-template-columns: 1fr; }
+}
