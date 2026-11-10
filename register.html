@@ -16,16 +16,21 @@
         <a href="contact.html">Contact</a>
     </nav>
 
+   
     <header class="reg-banner">
-        <h1>Book Your Appointment</h1>
+        <p class="banner-small">REGISTER / BOOKING</p>
+        <h1>Book Your Glow</h1>
         <p>Register, book makeup service & order products - all in one place</p>
     </header>
 
     <main class="form-wrap">
-        <!-- LEFT SIDE -->
+        
         <div class="left-offer">
-            <h2>Welcome to Blush & Bloom</h2>
+            <h2>Welcome to<br>Blush & Bloom</h2>
             <p class="left-sub">Book your look & shop your favourites</p>
+            
+            <div class="offer-badge">10% OFF <span>first order</span></div>
+
             <ul>
                 <li>💄 10% OFF on first product order</li>
                 <li>💍 Bridal, Party & Skin Care</li>
@@ -39,15 +44,17 @@
                 <span>Eye Palette</span>
             </div>
             <img src="assets/blush-img.avif" alt="makeup">
+            <p class="left-note">Secure • No payment now • Cancel anytime</p>
         </div>
 
-        <!-- RIGHT SIDE FORM -->
+        
         <form id="regForm" class="form-right" novalidate>
+            <p class="form-small">BOOK YOUR APPOINTMENT</p>
             <h3>Your Details</h3>
             <div class="grid-2">
                 <div>
                     <label for="fullname">Full Name *</label>
-                    <input type="text" id="fullname" placeholder="Your name">
+                    <input type="text" id="fullname" placeholder="Enter your full name">
                     <span class="err" id="nameErr"></span>
                 </div>
                 <div>
@@ -143,8 +150,9 @@
             <label class="terms"><input type="checkbox" id="terms"> I agree to the terms & want to place order</label>
             <span class="err" id="termsErr"></span>
 
-            <button type="submit">Register & Book Now</button>
+            <button type="submit">Confirm Booking →</button>
             <p id="successMsg"></p>
+            <p class="form-note">You'll receive confirmation via email within minutes</p>
         </form>
     </main>
 
@@ -153,12 +161,10 @@
     </footer>
 
 <script>
-    
     document.getElementById("budget").addEventListener("input", function(){
         document.getElementById("budgetVal").innerText = "Rs. " + this.value;
     });
 
-   
     document.getElementById("regForm").addEventListener("submit", function(e){
         e.preventDefault();
         let valid = true;
@@ -174,7 +180,6 @@
             }
         }
 
-       
         let name = document.getElementById("fullname").value.trim();
         if(name.length < 3){
             setError("fullname","nameErr","Name kam se kam 3 letters ka ho");
@@ -182,7 +187,6 @@
             setError("fullname","nameErr","");
         }
 
-        
         let email = document.getElementById("email").value.trim();
         let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if(!emailPattern.test(email)){
@@ -191,7 +195,6 @@
             setError("email","emailErr","");
         }
 
-      
         let pass = document.getElementById("password").value;
         if(pass.length < 6){
             setError("password","passErr","Password kam se kam 6 characters ka ho");
@@ -199,7 +202,6 @@
             setError("password","passErr","");
         }
 
-       
         let guests = document.getElementById("guests").value;
         if(guests < 1 || guests > 10){
             setError("guests","guestErr","1 se 10 ke darmiyan likho");
@@ -207,7 +209,6 @@
             setError("guests","guestErr","");
         }
 
-      
         let dateVal = document.getElementById("date").value;
         let today = new Date().toISOString().split("T")[0];
         if(!dateVal){
@@ -218,7 +219,6 @@
             setError("date","dateErr","");
         }
 
-     
         let timeVal = document.getElementById("time").value;
         if(timeVal && (timeVal < "10:00" || timeVal > "20:00")){
             setError("time","timeErr","Time 10am se 8pm ke darmiyan ho");
@@ -226,7 +226,6 @@
             setError("time","timeErr","");
         }
 
-       
         let terms = document.getElementById("terms");
         if(!terms.checked){
             document.getElementById("termsErr").innerText = "Please terms ko agree karo";
@@ -235,7 +234,6 @@
             document.getElementById("termsErr").innerText = "";
         }
 
-        
         if(valid){
             document.getElementById("successMsg").innerText = "Thank you " + name + "! Your booking is registered successfully 💄";
             document.getElementById("regForm").reset();

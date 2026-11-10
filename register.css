@@ -41,7 +41,15 @@ nav a:hover, nav a.active {
     color: white;
     box-shadow: 0 10px 30px rgba(233,30,99,0.2);
 }
-.reg-banner h1 { font-size: 42px; }
+
+.banner-small {
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffd1dc !important;
+    margin-bottom: 10px;
+}
+.reg-banner h1 { font-size: 48px; line-height: 1.1; }
 .reg-banner p { color: #ffe6ea; margin-top: 8px; }
 .form-wrap {
     width: 90%;
@@ -61,8 +69,24 @@ nav a:hover, nav a.active {
     position: sticky;
     top: 90px;
 }
-.left-offer h2 { color: #880e4f; font-size: 24px; }
+.left-offer h2 { color: #880e4f; font-size: 28px; line-height: 1.2; }
 .left-sub { color: #999; font-size: 14px; margin: 8px 0 20px; }
+
+.offer-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #e91e63, #ad1457);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(233,30,99,0.3);
+}
+.offer-badge span {
+    font-weight: 400;
+    font-size: 13px;
+}
 .left-offer ul { list-style: none; }
 .left-offer li { margin-bottom: 12px; font-size: 14px; color: #555; }
 .mini-products { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
@@ -82,6 +106,14 @@ nav a:hover, nav a.active {
     border-radius: 15px;
     margin-top: 10px;
 }
+
+.left-note {
+    text-align: center;
+    font-size: 12px;
+    color: #ad1457;
+    margin-top: 15px;
+    font-weight: 600;
+}
 .form-right {
     flex: 1.4;
     background: rgba(255,255,255,0.9);
@@ -90,6 +122,14 @@ nav a:hover, nav a.active {
     box-shadow: 0 15px 40px rgba(233,30,99,0.15);
     border: 1px solid white;
 }
+
+.form-small {
+    color: #e91e63;
+    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
 .form-right h3 {
     color: #880e4f;
     font-size: 18px;
@@ -97,7 +137,7 @@ nav a:hover, nav a.active {
     padding-bottom: 8px;
     border-bottom: 1px dashed #f8bbd0;
 }
-.form-right h3:first-child { margin-top: 0; }
+.form-right h3:first-of-type { margin-top: 0; }
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -198,9 +238,17 @@ input.invalid {
     font-weight: 600;
     margin-top: 5px;
 }
+
+.form-note {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 12px;
+}
 @media(max-width: 900px) {
     .form-wrap { flex-direction: column; }
     .left-offer { position: static; }
     .grid-2 { grid-template-columns: 1fr; }
     nav { flex-wrap: wrap; }
+    .reg-banner h1 { font-size: 34px; }
 }
