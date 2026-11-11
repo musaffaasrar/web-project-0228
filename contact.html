@@ -67,26 +67,36 @@
 
         <div class="form-side">
             <h2>Send Message</h2>
-            <form>
-                <label>Your Name</label>
-                <input type="text" placeholder="Enter your name" required>
+            <form id="contactForm" novalidate>
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+                <span class="error" id="nameError">Name kam se kam 3 letters ka hona chahiye</span>
 
-                <label>Email / Phone</label>
-                <input type="text" placeholder="Enter email or phone" required>
+                <label for="email">Email *</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email e.g. ayesha@gmail.com">
+                <span class="error" id="emailError">Sahi email likho, jaise ayesha@gmail.com</span>
 
-                <label>Service You Want</label>
-                <select>
-                    <option>Bridal Makeup</option>
-                    <option>Party Makeup</option>
-                    <option>Hair Styling</option>
-                    <option>Skin Care</option>
-                    <option>Other</option>
+                <label for="phone">Phone Number *</label>
+                <input type="text" id="phone" name="phone" placeholder="03001234567">
+                <span class="error" id="phoneError">Phone 11 numbers ka hona chahiye, jaise 03001234567</span>
+
+                <label for="service">Service You Want *</label>
+                <select id="service" name="service">
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="bridal">Bridal Makeup</option>
+                    <option value="party">Party Makeup</option>
+                    <option value="hair">Hair Styling</option>
+                    <option value="skin">Skin Care</option>
+                    <option value="other">Other</option>
                 </select>
+                <span class="error" id="serviceError">Koi ek service select karo</span>
 
-                <label>Your Message</label>
-                <textarea rows="4" placeholder="Write your message..."></textarea>
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" rows="4" placeholder="Write your message..."></textarea>
+                <span class="error" id="messageError">Message kam se kam 10 letters ka likho</span>
 
                 <button type="submit">Send Message</button>
+                <p class="success" id="successMsg">Thank you! Your message has been sent successfully. ❤️</p>
             </form>
         </div>
     </main>
@@ -94,5 +104,77 @@
     <footer>
         <p>&copy; 2026 Blush and Bloom. All rights reserved.</p>
     </footer>
+
+<script>
+   
+    let form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); 
+
+    
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let service = document.getElementById("service").value;
+        let message = document.getElementById("message").value.trim();
+
+        let isValid = true; 
+
+        
+        if (name.length < 3) {
+            document.getElementById("nameError").style.display = "block";
+            document.getElementById("name").classList.add("error-border");
+            isValid = false;
+        } else {
+            document.getElementById("nameError").style.display = "none";
+            document.getElementById("name").classList.remove("error-border");
+        }
+
+
+        if (email === "" || !email.includes("@") || !email.includes(".")) {
+            document.getElementById("emailError").style.display = "block";
+            document.getElementById("email").classList.add("error-border");
+            isValid = false;
+        } else {
+            document.getElementById("emailError").style.display = "none";
+            document.getElementById("email").classList.remove("error-border");
+        }
+
+        if (phone.length !== 11 || isNaN(phone)) {
+            document.getElementById("phoneError").style.display = "block";
+            document.getElementById("phone").classList.add("error-border");
+            isValid = false;
+        } else {
+            document.getElementById("phoneError").style.display = "none";
+            document.getElementById("phone").classList.remove("error-border");
+        }
+
+        if (service === "") {
+            document.getElementById("serviceError").style.display = "block";
+            document.getElementById("service").classList.add("error-border");
+            isValid = false;
+        } else {
+            document.getElementById("serviceError").style.display = "none";
+            document.getElementById("service").classList.remove("error-border");
+        }
+
+        if (message.length < 10) {
+            document.getElementById("messageError").style.display = "block";
+            document.getElementById("message").classList.add("error-border");
+            isValid = false;
+        } else {
+            document.getElementById("messageError").style.display = "none";
+            document.getElementById("message").classList.remove("error-border");
+        }
+
+        if (isValid) {
+            document.getElementById("successMsg").style.display = "block";
+            form.reset(); 
+        } else {
+            document.getElementById("successMsg").style.display = "none";
+        }
+    });
+</script>
 </body>
 </html>

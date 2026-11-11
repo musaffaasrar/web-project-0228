@@ -9,7 +9,6 @@ body{
     color:#333;
 }
 
-
 nav {
     background: linear-gradient(90deg, #e91e63, #ad1457);
     padding: 16px 20px;
@@ -32,7 +31,6 @@ nav a {
 nav a:hover {
     background-color: rgba(255,255,255,0.25);
 }
-
 
 .contact-banner{
     background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('assets/blush-img.avif');
@@ -108,7 +106,6 @@ nav a:hover {
     border-radius: 20px;
 }
 
-
 .form-side label{
     display: block;
     font-size: 13px;
@@ -151,4 +148,28 @@ footer{
 
 @media(max-width:700px){
     .contact-main{ grid-template-columns: 1fr; }
+}
+
+
+.error{
+    color: #d32f2f;
+    font-size: 12px;
+    display: none;
+    margin-top: 5px;
+}
+
+.success{
+    color: #2e7d32;
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    display: none;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.error-border{
+    border: 2px solid #d32f2f !important;
 }
