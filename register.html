@@ -16,7 +16,6 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-   
     <header class="reg-banner">
         <p class="banner-small">REGISTER / BOOKING</p>
         <h1>Book Your Glow</h1>
@@ -47,7 +46,6 @@
             <p class="left-note">Secure • No payment now • Cancel anytime</p>
         </div>
 
-        
         <form id="regForm" class="form-right" novalidate>
             <p class="form-small">BOOK YOUR APPOINTMENT</p>
             <h3>Your Details</h3>
@@ -165,76 +163,116 @@
         document.getElementById("budgetVal").innerText = "Rs. " + this.value;
     });
 
-    document.getElementById("regForm").addEventListener("submit", function(e){
-        e.preventDefault();
-        let valid = true;
-
-        function setError(inputId, errId, msg){
-            document.getElementById(errId).innerText = msg;
-            let inp = document.getElementById(inputId);
-            if(msg){
-                valid = false;
-                inp.classList.add("invalid");
-            } else {
-                inp.classList.remove("invalid");
-            }
+    function setError(inputId, errId, msg){
+        document.getElementById(errId).innerText = msg;
+        let inp = document.getElementById(inputId);
+        if(msg){
+            inp.classList.add("invalid");
+            return false;
+        } else {
+            inp.classList.remove("invalid");
+            return true;
         }
+    }
 
+    function validateName(){
         let name = document.getElementById("fullname").value.trim();
         if(name.length < 3){
-            setError("fullname","nameErr","Name kam se kam 3 letters ka ho");
-        } else {
-            setError("fullname","nameErr","");
+            return setError("fullname","nameErr","Name kam se kam 3 letters ka ho");
         }
+        return setError("fullname","nameErr","");
+    }
 
+    function validateEmail(){
         let email = document.getElementById("email").value.trim();
         let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if(!emailPattern.test(email)){
-            setError("email","emailErr","Sahi email likho - you@gmail.com");
-        } else {
-            setError("email","emailErr","");
+            return setError("email","emailErr","Sahi email likho - you@gmail.com");
         }
+        return setError("email","emailErr","");
+    }
 
+    function validatePass(){
         let pass = document.getElementById("password").value;
         if(pass.length < 6){
-            setError("password","passErr","Password kam se kam 6 characters ka ho");
-        } else {
-            setError("password","passErr","");
+            return setError("password","passErr","Password kam se kam 6 characters ka ho");
         }
+        return setError("password","passErr","");
+    }
 
+    function validateGuests(){
         let guests = document.getElementById("guests").value;
         if(guests < 1 || guests > 10){
-            setError("guests","guestErr","1 se 10 ke darmiyan likho");
-        } else {
-            setError("guests","guestErr","");
+            return setError("guests","guestErr","1 se 10 ke darmiyan likho");
         }
+        return setError("guests","guestErr","");
+    }
 
+    function validateDate(){
         let dateVal = document.getElementById("date").value;
         let today = new Date().toISOString().split("T")[0];
         if(!dateVal){
-            setError("date","dateErr","Date select karo");
+            return setError("date","dateErr","Date select karo");
         } else if(dateVal < today){
-            setError("date","dateErr","Purani date nahi select kar sakte");
-        } else {
-            setError("date","dateErr","");
+            return setError("date","dateErr","Purani date nahi select kar sakte");
         }
+        return setError("date","dateErr","");
+    }
 
+    function validateTime(){
         let timeVal = document.getElementById("time").value;
         if(timeVal && (timeVal < "10:00" || timeVal > "20:00")){
-            setError("time","timeErr","Time 10am se 8pm ke darmiyan ho");
-        } else {
-            setError("time","timeErr","");
+            return setError("time","timeErr","Time 10am se 8pm ke darmiyan ho");
         }
+        return setError("time","timeErr","");
+    }
 
+    function validateTerms(){
         let terms = document.getElementById("terms");
         if(!terms.checked){
             document.getElementById("termsErr").innerText = "Please terms ko agree karo";
-            valid = false;
+            return false;
         } else {
             document.getElementById("termsErr").innerText = "";
+            return true;
         }
+    }
 
-        if(valid){
+    
+    document.getElementById("fullname").addEventListener("input", validateName);
+    document.getElementById("fullname").addEventListener("blur", validateName);
+
+    document.getElementById("email").addEventListener("input", validateEmail);
+    document.getElementById("email").addEventListener("blur", validateEmail);
+
+    document.getElementById("password").addEventListener("input", validatePass);
+    document.getElementById("password").addEventListener("blur", validatePass);
+
+    document.getElementById("guests").addEventListener("input", validateGuests);
+    document.getElementById("guests").addEventListener("blur", validateGuests);
+
+    document.getElementById("date").addEventListener("change", validateDate);
+    document.getElementById("date").addEventListener("blur", validateDate);
+
+    document.getElementById("time").addEventListener("change", validateTime);
+    document.getElementById("time").addEventListener("blur", validateTime);
+
+    document.getElementById("terms").addEventListener("change", validateTerms);
+
+    
+    document.getElementById("regForm").addEventListener("submit", function(e){
+        e.preventDefault();
+        let name = document.getElementById("fullname").value.trim();
+
+        let v1 = validateName();
+        let v2 = validateEmail();
+        let v3 = validatePass();
+        let v4 = validateGuests();
+        let v5 = validateDate();
+        let v6 = validateTime();
+        let v7 = validateTerms();
+
+        if(v1 && v2 && v3 && v4 && v5 && v6 && v7){
             document.getElementById("successMsg").innerText = "Thank you " + name + "! Your booking is registered successfully 💄";
             document.getElementById("regForm").reset();
             document.getElementById("budgetVal").innerText = "Rs. 5000";
